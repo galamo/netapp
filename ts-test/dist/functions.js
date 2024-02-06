@@ -16,7 +16,7 @@ function getData() {
     return { id: 123 };
 }
 function getData2() {
-    return { requestId: "123", userToken: "this is token" };
+    return { id: 1, userToken: "this is token" };
 }
 function calculateTax(tax, price) {
     if (typeof price === "string") {
@@ -50,3 +50,10 @@ function getDayNum(day) {
     }
     return 2;
 }
+const AddFn = (a, b) => {
+    return a + b;
+};
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+console.log(isLeapYear(2024));

@@ -34,7 +34,7 @@ function getData(): ServerResponseApi {
 }
 
 function getData2(): ServerResponseApi {
-  return { requestId: "123", userToken: "this is token" };
+  return { id: 1, userToken: "this is token" };
 }
 
 function calculateTax(tax: number, price: number | string): number {
@@ -80,3 +80,12 @@ function getDayNum(day: DaysOfWeek): number {
   }
   return 2;
 }
+
+type AddFnType = (a: number, b: number) => number;
+const AddFn: AddFnType = (a: number, b: number): number => {
+  return a + b;
+};
+function isLeapYear(year: number): boolean {
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+console.log(isLeapYear(2024));
