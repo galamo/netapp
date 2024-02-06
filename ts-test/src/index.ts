@@ -37,3 +37,15 @@ const fromDate: Date = new Date();
 const toDate: string = new Date().toISOString();
 console.log(vLocation, `toDate: ${fromDate}`, `toDate: ${toDate}`);
 console.log(users);
+
+const salaries = [100, 222, 3300, 4400];
+const highSalaries = salaries.reduce(
+  (accSalary: number, currentSalary: number) => {
+    if (currentSalary > 100) {
+      return accSalary + currentSalary;
+    } else return accSalary;
+  },
+  0
+);
+
+console.log(highSalaries);
