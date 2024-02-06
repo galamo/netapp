@@ -76,9 +76,9 @@ console.log(highSalaries);
 
 ##### Example_1:
 
-- greet + arithmetic function
-- run time validation
-- default paramters
+- add function
+- Runtime validation
+- Default Params
 - void, primitive type
 - never ( loop, throw )
 
@@ -114,9 +114,9 @@ Write a isLeapyear() function that accepts a year and returns true/false dependi
 
 ### Objects
 
-1. function with Object example
-2. return type
-3. excess properties ignored
+1. Function with Object example
+2. Return type
+3. Properties ignored
 4. Type aliases
 5. Structured types
 
@@ -130,8 +130,7 @@ Write a isLeapyear() function that accepts a year and returns true/false dependi
 
 ##### Ex_1:
 
-- Write the Movie type alias to make the following two variables properly typed
-- Make sure that "originalTitle" is optional and "title" is readonly
+- Write the Movie type alias to make the following two variables properly typed (originalTitle, title - readonly)
 
 ```javascript
 const dune: Movie = {
@@ -272,8 +271,6 @@ Generics:
 1. Example of BuildIn Generics - querySelector Button.
 2. querySelector Button
 3. Queue Class with Generics
-
-# 20.9
 
 ### Interfaces and Union
 
