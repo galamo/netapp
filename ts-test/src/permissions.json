@@ -1,0 +1,9 @@
+{
+  "permissions": [
+    { "id": 1, "value": "read" },
+    { "id": 2, "value": "write" },
+    { "id": 3, "value": "edit" },
+    { "id": 4, "value": "delete" },
+    { "id": 5, "value": "all", "role": "Admin - Only for shirley" }
+  ]
+}
