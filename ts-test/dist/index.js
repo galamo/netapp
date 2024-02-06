@@ -1,6 +1,11 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const permissions_json_1 = require("./permissions.json");
+const functions_1 = __importDefault(require("./functions"));
+(0, functions_1.default)();
 function getUserPermissions(user) {
     if (user.toLowerCase() === "shirley") {
         return permissions_json_1.permissions.find((item) => item.id === 5);
@@ -10,10 +15,7 @@ function getUserPermissions(user) {
     }
 }
 const result = getUserPermissions("shirley");
-console.log(result);
 const netApp = "This is Netapp course";
-console.log(netApp);
-console.log("this is a new message");
 const obj = {
     company: "netApp",
     location: "Ehad Haam 9",
@@ -27,8 +29,7 @@ let MAX_RECORDS = 50000;
 const vLocation = "Dubai";
 const fromDate = new Date();
 const toDate = new Date().toISOString();
-console.log(vLocation, `toDate: ${fromDate}`, `toDate: ${toDate}`);
-console.log(users);
+// console.log(vLocation, `toDate: ${fromDate}`, `toDate: ${toDate}`);
 const salaries = [100, 222, 3300, 4400];
 const highSalaries = salaries.reduce((accSalary, currentSalary) => {
     if (currentSalary > 100) {
@@ -37,4 +38,5 @@ const highSalaries = salaries.reduce((accSalary, currentSalary) => {
     else
         return accSalary;
 }, 0);
-console.log(highSalaries);
+// highSalaries.toLowerCase();
+// console.log(highSalaries);
