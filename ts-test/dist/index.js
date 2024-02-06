@@ -5,6 +5,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const permissions_json_1 = require("./permissions.json");
 const functions_1 = __importDefault(require("./functions"));
+const interfaces2_1 = __importDefault(require("./interfaces2"));
+console.log(interfaces2_1.default);
 (0, functions_1.default)();
 function getUserPermissions(user) {
     if (user.toLowerCase() === "shirley") {

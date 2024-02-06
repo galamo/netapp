@@ -1,6 +1,8 @@
 import fileJson from "./settings.json";
 import { permissions } from "./permissions.json";
 import functions from "./functions";
+import interfaces2 from "./interfaces2";
+console.log(interfaces2);
 functions();
 type Permission = (typeof permissions)[0];
 
