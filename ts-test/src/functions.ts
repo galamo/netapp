@@ -89,3 +89,21 @@ function isLeapYear(year: number): boolean {
   return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 console.log(isLeapYear(2024));
+
+type ColorFull = { primaryColor: string; secondaryColor: string | undefined };
+type Circle = { radius: number; material: string };
+
+type Car = ColorFull & Circle;
+const car: Car = {
+  primaryColor: "black",
+  secondaryColor: "white",
+  radius: 90,
+  material: "bronze",
+};
+
+type CarUnion = ColorFull | Circle;
+const car2: CarUnion = {
+  primaryColor: "black",
+  secondaryColor: undefined,
+  material: "metal",
+};
