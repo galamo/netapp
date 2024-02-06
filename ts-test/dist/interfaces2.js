@@ -81,5 +81,4 @@ const result = getUsersByKey([
 //   }
 // }
 // const s = doNothing();
-call(1);
 exports.default = 1;

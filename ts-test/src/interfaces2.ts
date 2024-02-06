@@ -109,6 +109,4 @@ const result = getUsersByKey(
 // }
 // const s = doNothing();
 
-call(1);
-
 export default 1;
