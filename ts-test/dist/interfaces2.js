@@ -70,5 +70,16 @@ const result = getUsersByKey([
     { name: "g", lastName: "aaaaa" },
     { name: "g", lastName: "aaaaa" },
 ], "lastName", "am");
-console.log(result);
+// function doNothing(a?: number) {
+//   if (typeof a === undefined) {
+//     throw new Error("Something");
+//   }
+//   if (a === 1) {
+//     return 1;
+//   } else {
+//     throw new Error("Something");
+//   }
+// }
+// const s = doNothing();
+call(1);
 exports.default = 1;

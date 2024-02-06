@@ -97,6 +97,18 @@ const result = getUsersByKey(
   "am"
 );
 
-console.log(result);
+// function doNothing(a?: number) {
+//   if (typeof a === undefined) {
+//     throw new Error("Something");
+//   }
+//   if (a === 1) {
+//     return 1;
+//   } else {
+//     throw new Error("Something");
+//   }
+// }
+// const s = doNothing();
+
+call(1);
 
 export default 1;

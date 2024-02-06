@@ -247,6 +247,16 @@ const cats: Movie = {
 
 ### Tuple
 
+### Call Signature
+
+# EX 21
+
+- Given the following array numbers
+- `const numbers = [1, 4, 3, 2, 5, 6, 5, 4, 5, 2, 2, 3, 8, 9];`
+- Create `SortFunction` interface with sortBy key - `asc` | `desc` and function that can sort the numbers, hint use sort high order function
+
+### Overloads
+
 Generics:
 
 1. Example of BuildIn Generics - querySelector Button.
