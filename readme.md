@@ -429,7 +429,7 @@ function getSubject<Type>(arg: Type): Type {
 
 ## EX 25
 
-- Implement class Queue that receive a generic `event`
+- Implement class `Stack` that receive a generic `event`
 - Implement `push` and `pop` functions
 
 ## EX 26
@@ -456,6 +456,7 @@ let studentRecord = new StudentRecord("1", "John");
 - Getters example - Product
 - Promise
 - Constraint a+b
+
 - ### EX 28
 - Remove UsersApiResponse and AdminsApiResponse types
   and use generic type ApiResponse in order to specify API

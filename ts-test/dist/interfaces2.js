@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const persons = [
+var persons = [
     {
         name: "Israel",
         age: 20,
@@ -21,7 +21,7 @@ const persons = [
     },
 ];
 function extraInfo(p) {
-    let additionalInfo = "";
+    var additionalInfo = "";
     if ("role" in p) {
         additionalInfo = p.role;
     }
@@ -31,7 +31,7 @@ function extraInfo(p) {
     return additionalInfo;
 }
 function extraInfoBasedOnIsOperator(p) {
-    let additionalInfo = "";
+    var additionalInfo = "";
     if (isAdmin(p)) {
         additionalInfo = p.role;
     }
@@ -52,14 +52,14 @@ function isAdmin2(person) {
         return false;
     }
 }
-const extraInfoResult = persons.map(extraInfo);
+var extraInfoResult = persons.map(extraInfo);
 function getUsersByKey(users, key, search) {
-    return users.filter((user) => user[key].toString().includes(search));
+    return users.filter(function (user) { return user[key].toString().includes(search); });
 }
 function getUsersByKeyGen(users, key, search) {
-    return users.filter((user) => user[key].toString().includes(search));
+    return users.filter(function (user) { return user[key].toString().includes(search); });
 }
-const result = getUsersByKey([
+var result = getUsersByKey([
     { name: "g", lastName: "am" },
     { name: "g", lastName: "am" },
     { name: "g", lastName: "am" },
