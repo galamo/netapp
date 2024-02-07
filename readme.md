@@ -455,7 +455,7 @@ let studentRecord = new StudentRecord("1", "John");
 - Cars fuel/electric example
 - Getters example - Product
 - Promise
-
+- Constraint a+b
 - ##### Ex_3 (9) --- important
 
 # Awaited
