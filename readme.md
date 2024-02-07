@@ -245,9 +245,9 @@ const cats: Movie = {
 - Write a function called greet that accepts a single string OR an array of strings
 - It should print "Hello, <name>" for that single person OR greet each person in the array with the same format
 
-### Tuple
+# 7/2
 
-### Call Signature
+## Call Signature
 
 # EX 21
 
@@ -255,36 +255,235 @@ const cats: Movie = {
 - `const numbers = [1, 4, 3, 2, 5, 6, 5, 4, 5, 2, 2, 3, 8, 9];`
 - Create `SortFunction` interface with sortBy key - `asc` | `desc` and function that can sort the numbers, hint use sort high order function
 
+### Overloading concept
+
+- TypeScript provides the concept of function overloading. You can have multiple functions with the same name but different parameter types and return type. However, the number of parameters should be the same.
+
 ### Overloads
 
-Generics:
+### Omit And Pick
 
-1. Example of BuildIn Generics - querySelector Button.
-1. takes type of from json
-1. using key as string
-1. deprecated
+Pick only take the items you define you want
+Omit will pick every item you don't define to omit
 
-### interfaces
+### Example
 
-1. interface declaration merging
+- SuperUser - { userId, address, etc.. roles: a|b|c[]}
+- Subscriber - with lower priviliges
+- Pick is better than Omit
+
+## EX 22
+
+- Define type PowerUser which should have all fields
+  from both User and Admin (except for type),
+  and also have type 'powerUser' without duplicating
+  all the fields in the code.
+
+```typescript
+interface User {
+  type: "user";
+  name: string;
+  age: number;
+  lastVisit: string;
+}
+
+interface Admin {
+  type: "admin";
+  name: string;
+  age: number;
+  role: string;
+}
+
+type PowerUser = Unknown;
+```
+
+## EX 23
+
+- Copy paste the following code to your TS file & solve the TS error by replacing the relevant types inside the `filterUsers` function
+
+```typescript
+interface User {
+  type: "user";
+  name: string;
+  age: number;
+  lastVisit: string;
+}
+
+interface Admin {
+  type: "admin";
+  name: string;
+  age: number;
+  role: string;
+}
+
+export type Person = User | Admin;
+
+export const persons: Person[] = [
+  {
+    type: "user",
+    name: "Max Mustermann",
+    age: 25,
+    lastVisit: "Before 10 hours",
+  },
+  {
+    type: "admin",
+    name: "Jane Doe",
+    age: 32,
+    role: "Administrator",
+  },
+  {
+    type: "user",
+    name: "Kate Müller",
+    age: 23,
+    lastVisit: "Before 10 hours",
+  },
+  {
+    type: "admin",
+    name: "Bruce Willis",
+    age: 64,
+    role: "World saver",
+  },
+  {
+    type: "user",
+    name: "Wilson",
+    age: 23,
+    lastVisit: "Before 10 hours",
+  },
+  {
+    type: "admin",
+    name: "Agent Smith",
+    age: 23,
+    role: "Administrator",
+  },
+];
+
+export const isAdmin = (person: Person): person is Admin =>
+  person.type === "admin";
+export const isUser = (person: Person): person is User =>
+  person.type === "user";
+
+export function logPerson(person: Person) {
+  let additionalInformation = "";
+  if (isAdmin(person)) {
+    additionalInformation = person.role;
+  }
+  if (isUser(person)) {
+    additionalInformation = person.lastVisit;
+  }
+  console.log(` - ${person.name}, ${person.age}, ${additionalInformation}`);
+}
+
+export function filterUsers(persons: Person[], criteria: User): User[] {
+  return persons.filter(isUser).filter((user) => {
+    const criteriaKeys = Object.keys(criteria) as (keyof User)[];
+    return criteriaKeys.every((fieldName) => {
+      return user[fieldName] === criteria[fieldName];
+    });
+  });
+}
+
+filterUsers(persons, {
+  name: "Wilson",
+  age: 23,
+}).forEach(logPerson);
+```
+
+# Classes Extends & Implements
+
+- Example IDF
+
+## EX 24
+
+- Create the following OOP definitions:
+
+1.  class Song
+2.  class Video
+3.  interface Play
+4.  parent class Duration
+
+# Partial & Required
+
+```typescript
+type Required<Type> = {
+  [K in keyof Type]-?: Type[K];
+};
+
+type Partial<T> = {
+  [P in keyof T]?: T[P];
+};
+```
+
+# Generics:
+
+- Example of BuildIn Generics - querySelector Button.
+
+```typescript
+function getSubject<Type>(arg: Type): Type {
+  return arg;
+}
+```
+
+1. Classes
+2. Constraints
+3. Interfaces
+
+## EX 25
+
+- Implement class Queue that receive a generic `event`
+- Implement `push` and `pop` functions
+
+## EX 26
+
+- Create a function that save to DB a generic object and return the object itself with id as string.
+- `saveData<T>`
+
+## EX 27
+
+- Based on the following Code, try to improve the 2 classes by using generic class
+
+```typescript
+class Student {
+  constructor(public id: number, public name: string) {}
+}
+class StudentRecord {
+  constructor(public id: string, public name: string) {}
+}
+let student = new Student(1, "John");
+let studentRecord = new StudentRecord("1", "John");
+```
+
+- Cars fuel/electric example
+- Getters example - Product
+- Promise
+
+- ##### Ex_3 (9) --- important
+
+# Awaited
+
+```typescript
+async function getUser(): Promise<string> {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      return resolve("user ");
+    }, 3000);
+  });
+}
+
+async function init() {
+  const result: Awaited<ApiDataResponse> = await getData();
+  console.log(result);
+
+  const functionResult: Awaited<ReturnType<typeof getUser>> = await getUser();
+  console.log(functionResult);
+}
+```
+
+## Js lib support
+
+- deprecated
+- lib.ts
 
 ### Casting
-
-##### Ex_1:
-
-- Create a function that receive elementId string & return the element value;
-
-## Exercises
-
-### Generics
-
-1. Example of BuildIn Generics - querySelector Button.
-2. querySelector Button
-3. Queue Class with Generics
-
-### Interfaces and Union
-
-1. key in item
 
 ##### ex interfaces union and key in
 
@@ -343,18 +542,6 @@ The keyof operator takes an object type and produces a string or numeric literal
 ##### Example_1:
 
 keyof Car object
-
-### Omit And Pick
-
-Pick only take the items you define you want
-Omit will pick every item you don't define to omit
-
-##### Example_1:
-
-- SuperUser - { userId, address, etc.. roles: a|b|c[]}
-- Subscriber - with lower priviliges
-
-We should avoid using Omit<> and prefer Pick<> when we have more properties to omit than to pick.
 
 ### Partial & Required
 

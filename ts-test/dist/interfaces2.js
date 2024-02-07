@@ -56,6 +56,9 @@ const extraInfoResult = persons.map(extraInfo);
 function getUsersByKey(users, key, search) {
     return users.filter((user) => user[key].toString().includes(search));
 }
+function getUsersByKeyGen(users, key, search) {
+    return users.filter((user) => user[key].toString().includes(search));
+}
 const result = getUsersByKey([
     { name: "g", lastName: "am" },
     { name: "g", lastName: "am" },
