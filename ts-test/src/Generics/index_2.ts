@@ -40,6 +40,25 @@ playList.add({
   duration: 4,
 });
 
+function mergeFn<S extends Partial<Song>, V extends Video>(
+  obj1: S,
+  obj2: V
+): S & V {
+  return { ...obj1, ...obj2 };
+}
+
+mergeFn(
+  {
+    category: "rock",
+    duration: 4,
+  },
+  {
+    title: "sting",
+    creator: "yuval",
+    duration: 4,
+  }
+);
+
 playList.play();
 playList.play();
 

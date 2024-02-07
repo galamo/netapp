@@ -23,6 +23,17 @@ playList.add({
     creator: "yuval",
     duration: 4,
 });
+function mergeFn(obj1, obj2) {
+    return Object.assign(Object.assign({}, obj1), obj2);
+}
+mergeFn({
+    category: "rock",
+    duration: 4,
+}, {
+    title: "sting",
+    creator: "yuval",
+    duration: 4,
+});
 playList.play();
 playList.play();
 class Stacki {

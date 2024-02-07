@@ -12,7 +12,28 @@ function contactParams(a, b) {
         return Number(a) + Number(b);
     }
 }
-contactParams(1, "a"); // error
-contactParams("a", "a");
-contactParams(1, 1);
-contactParams("a", 1); // error
+// contactParams(1, "a"); // error
+// contactParams("a", []); //error
+// contactParams(1, 1); // ok
+// contactParams("1, 1", "aaa"); // ok
+// contactParams("a", 1); // error
+class Student {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+class StudentRecord {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+class StudentGeneric {
+    constructor(id, name) {
+        this.id = id;
+        this.name = name;
+    }
+}
+let student = new StudentGeneric(1, "John");
+let studentRecord = new StudentGeneric("1", "John");
