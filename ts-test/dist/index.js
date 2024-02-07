@@ -6,6 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const permissions_json_1 = require("./permissions.json");
 const functions_1 = __importDefault(require("./functions"));
 const interfaces2_1 = __importDefault(require("./interfaces2"));
+const signatureCall_1 = __importDefault(require("./signatureCall"));
+console.log(signatureCall_1.default);
 console.log(interfaces2_1.default);
 (0, functions_1.default)();
 function getUserPermissions(user) {
