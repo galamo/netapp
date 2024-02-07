@@ -1,16 +1,17 @@
-var Playlist = /** @class */ (function () {
-    function Playlist() {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+class Playlist {
+    constructor() {
         this.list = [];
     }
-    Playlist.prototype.add = function (someItem) {
+    add(someItem) {
         this.list.push(someItem);
-    };
-    Playlist.prototype.play = function () {
+    }
+    play() {
         this.list.splice(0, 1);
-    };
-    return Playlist;
-}());
-var playList = new Playlist();
+    }
+}
+const playList = new Playlist();
 playList.add({
     artist: "sting",
     singer: "sting",
@@ -24,3 +25,32 @@ playList.add({
 });
 playList.play();
 playList.play();
+class Stacki {
+    constructor() {
+        this.data = [];
+    }
+    pop() {
+        return this.data.pop();
+    }
+    push(item) {
+        this.data.push(item);
+    }
+}
+function saveDataInDb(callback, itemToSave) {
+    const res = callback(itemToSave);
+    return Object.assign(Object.assign({}, itemToSave), { id: res });
+}
+// type UserKey = keyof User;
+function getWhatEverByKey(arrayOfItems, key, search) {
+    return arrayOfItems.filter((item) => item[key].toString().includes(search));
+}
+const customers = [
+    { name: "US", sId: "abc123" },
+    { name: "Apple", sId: "abc1234567" },
+];
+const cars = [
+    { type: "toyota", engine: 2000 },
+    { type: "skoda", engine: 3000 },
+];
+getWhatEverByKey(customers, "name", "Apple");
+getWhatEverByKey(cars, "type", "Apple");

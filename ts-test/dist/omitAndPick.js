@@ -1,14 +1,14 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.filterUsers = exports.logPerson = exports.isUser = exports.isAdmin = exports.persons = void 0;
-var user = {
+const user = {
     password: "1234",
     firstName: "gal",
     lastName: "amo",
     userName: "galamo88@gmail.com",
     roles: ["Admin", "User"],
 };
-var pu = {
+const pu = {
     name: "",
     age: 1,
     role: "",
@@ -53,29 +53,25 @@ exports.persons = [
         role: "Administrator",
     },
 ];
-var isAdmin = function (person) {
-    return person.type === "admin";
-};
+const isAdmin = (person) => person.type === "admin";
 exports.isAdmin = isAdmin;
-var isUser = function (person) {
-    return person.type === "user";
-};
+const isUser = (person) => person.type === "user";
 exports.isUser = isUser;
 function logPerson(person) {
-    var additionalInformation = "";
+    let additionalInformation = "";
     if ((0, exports.isAdmin)(person)) {
         additionalInformation = person.role;
     }
     if ((0, exports.isUser)(person)) {
         additionalInformation = person.lastVisit;
     }
-    console.log(" - ".concat(person.name, ", ").concat(person.age, ", ").concat(additionalInformation));
+    console.log(` - ${person.name}, ${person.age}, ${additionalInformation}`);
 }
 exports.logPerson = logPerson;
 function filterUsers(persons, criteria) {
-    return persons.filter(exports.isUser).filter(function (user) {
-        var criteriaKeys = Object.keys(criteria);
-        return criteriaKeys.every(function (fieldName) {
+    return persons.filter(exports.isUser).filter((user) => {
+        const criteriaKeys = Object.keys(criteria);
+        return criteriaKeys.every((fieldName) => {
             return user[fieldName] === criteria[fieldName];
         });
     });

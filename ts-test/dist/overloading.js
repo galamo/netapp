@@ -10,7 +10,7 @@ function compareNumbers(a, b) {
     else {
         // compareArays
         // const result = compareArrays()
-        var result_1 = true;
-        return result_1;
+        let result = true;
+        return result;
     }
 }

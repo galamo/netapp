@@ -1,4 +1,4 @@
-var userNameElement = document.querySelector("#idFromUI");
+const userNameElement = document.querySelector("#idFromUI");
 console.log(userNameElement.value);
 // Type/ArrayType
 function getUserId(userId) {
@@ -12,8 +12,8 @@ getUserId2(1234);
 function getUserIdGeneric(userId) {
     return userId;
 }
-var result = getUserIdGeneric("1234");
+const result = getUserIdGeneric("1234");
 function getUsers(arg) {
-    var a = arg[0], b = arg[1];
+    const [a, b] = arg;
     return a;
 }

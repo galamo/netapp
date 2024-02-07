@@ -65,7 +65,7 @@ function isAdmin2(person: Person): person is Admin {
   }
 }
 const extraInfoResult = persons.map(extraInfo);
-interface SuperUser {
+export interface SuperUser {
   name: string;
   lastName: string;
 }

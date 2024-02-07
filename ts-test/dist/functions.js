@@ -8,8 +8,8 @@ function getGeolocation(location, addXNum) {
     return { x: location.x + addXNum, y: location.y };
 }
 function convertGelocation(locations) {
-    var x = locations[0], y = locations[1];
-    return { x: x, y: y };
+    const [x, y] = locations;
+    return { x, y };
 }
 function getData() {
     // async operation
@@ -25,18 +25,18 @@ function calculateTax(tax, price) {
     }
     return Math.ceil(price * tax);
 }
-console.log("Tax 1 : ".concat(calculateTax(0.17, 500)));
-console.log("Tax 1 : ".concat(calculateTax(0.17, "$600")));
+console.log(`Tax 1 : ${calculateTax(0.17, 500)}`);
+console.log(`Tax 1 : ${calculateTax(0.17, "$600")}`);
 function getSettings() {
     return { time: true, title: "string" };
 }
-var _a = getSettings(), time = _a.time, title = _a.title;
+const { time, title } = getSettings();
 function getSettingsArray() {
     return [1, getSettings()];
 }
-var result = getSettingsArray();
-var c = result[0];
-var b = result[0];
+let result = getSettingsArray();
+const c = result[0];
+const b = result[0];
 var DaysOfWeekEnum;
 (function (DaysOfWeekEnum) {
     DaysOfWeekEnum[DaysOfWeekEnum["Sun"] = 1] = "Sun";
@@ -50,20 +50,20 @@ function getDayNum(day) {
     }
     return 2;
 }
-var AddFn = function (a, b) {
+const AddFn = (a, b) => {
     return a + b;
 };
 function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
 }
 console.log(isLeapYear(2024));
-var car = {
+const car = {
     primaryColor: "black",
     secondaryColor: "white",
     radius: 90,
     material: "bronze",
 };
-var car2 = {
+const car2 = {
     primaryColor: "black",
     secondaryColor: undefined,
     material: "metal",
